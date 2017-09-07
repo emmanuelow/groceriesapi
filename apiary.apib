@@ -1,0 +1,339 @@
+FORMAT: 1A
+
+# Healthy Basket Groceries API
+
+The Groceries API can be used to order groceries from the Healthy Basket store
+
+## Item [/items/{ID}]
+Single item
+
++ Parameters
+
+    + ID: "4" (string) - the item ID
+
+### Retrieve Item [GET]
+Retrieve a single item
+
++ Response 200 (application/json; charset=utf-8)
+
+        {
+            "ID": "4",
+            "name": "Brown Eggs",
+            "brand": "Store",
+            "amount": "1 dozen",
+            "description": "Free Range, Organic eggs",
+            "price": 6.99,
+            "defaultQuantity": 1,
+            "link": {
+                "rel": "image",
+                "href": "https://publicdocs-corp.documents.us2.oraclecloud.com/documents/link/LF7206C60A9212DA72124CA9F6C3FF17C1177E4725F3/file/D2BA28E8C506DC0CDA4F9C14F6C3FF17C1177E4725F3?allowInterrupt=1"
+            }
+        }
+
+
+## Items Collection [/items]
+Catalog of Items the API recognizes
+
+### List All Items [GET]
+Lists all recongizable items
+
++ Response 200 (application/json; charset=utf-8)
+
+        [
+            {
+                "ID": "1",
+                "name": "Orange Juice, Premium",
+                "brand": "Minute Maid",
+                "amount": "59 fl oz Carton",
+                "description": "Premium Orange Juice",
+                "price": 4.99,
+                "defaultQuantity": 1,
+                "link": {
+                    "rel": "image",
+                    "href": "https://publicdocs-corp.documents.us2.oraclecloud.com/documents/link/LF7206C60A9212DA72124CA9F6C3FF17C1177E4725F3/file/D2BA28E8C506DC0CDA4F9C14F6C3FF17C1177E4725F3?allowInterrupt=1"
+                }
+            },
+            {
+                "ID": "2",
+                "name": "Milk, Organic 1%",
+                "brand": "Dairy Pure",
+                "amount": "1G",
+                "description": "Organic Cow's Milk, Reduced Fat 1%",
+                "price": 3.99,
+                "defaultQuantity": 3,
+                "link": {
+                    "rel": "image",
+                    "href": "https://publicdocs-corp.documents.us2.oraclecloud.com/documents/link/LF7206C60A9212DA72124CA9F6C3FF17C1177E4725F3/file/D2BA28E8C506DC0CDA4F9C14F6C3FF17C1177E4725F3?allowInterrupt=1"
+                }
+            },
+            {
+                "ID": "3",
+                "name": "White Eggs",
+                "brand": "Store",
+                "amount": "1 dozen",
+                "description": "Free Range, Locally sourced eggs",
+                "price": 5.99,
+                "defaultQuantity": 1,
+                "link": {
+                    "rel": "image",
+                    "href": "https://publicdocs-corp.documents.us2.oraclecloud.com/documents/link/LF7206C60A9212DA72124CA9F6C3FF17C1177E4725F3/file/D2BA28E8C506DC0CDA4F9C14F6C3FF17C1177E4725F3?allowInterrupt=1"
+                }
+            },
+            {
+                "ID": "4",
+                "name": "Brown Eggs",
+                "brand": "Store",
+                "amount": "1 dozen",
+                "description": "Free Range, Organic eggs",
+                "price": 6.99,
+                "defaultQuantity": 1,
+                "link": {
+                    "rel": "image",
+                    "href": "https://publicdocs-corp.documents.us2.oraclecloud.com/documents/link/LF7206C60A9212DA72124CA9F6C3FF17C1177E4725F3/file/D2BA28E8C506DC0CDA4F9C14F6C3FF17C1177E4725F3?allowInterrupt=1"
+                }
+            },
+            {
+                "ID": "5",
+                "name": "Bananas",
+                "brand": "Produce",
+                "amount": "1 dozen",
+                "description": "Fresh Bananas, Costa Rica",
+                "price": 7.99,
+                "defaultQuantity": 1,
+                "link": {
+                    "rel": "image",
+                    "href": "https://publicdocs-corp.documents.us2.oraclecloud.com/documents/link/LF7206C60A9212DA72124CA9F6C3FF17C1177E4725F3/file/D2BA28E8C506DC0CDA4F9C14F6C3FF17C1177E4725F3?allowInterrupt=1"
+                }
+            },
+            {
+                "ID": "6",
+                "name": "Brioche Toast",
+                "brand": "Store",
+                "amount": "1 loaf",
+                "description": "Brioche Toaste, Baked in store",
+                "price": 8.99,
+                "defaultQuantity": 1,
+                "link": {
+                    "rel": "image",
+                    "href": "https://publicdocs-corp.documents.us2.oraclecloud.com/documents/link/LF7206C60A9212DA72124CA9F6C3FF17C1177E4725F3/file/D2BA28E8C506DC0CDA4F9C14F6C3FF17C1177E4725F3?allowInterrupt=1"
+                }
+            },
+            {
+                "ID": "7",
+                "name": "Butter",
+                "brand": "Store",
+                "amount": "1 stick",
+                "description": "Unsalted Butter",
+                "price": 2.99,
+                "defaultQuantity": 1,
+                "link": {
+                    "rel": "image",
+                    "href": "https://publicdocs-corp.documents.us2.oraclecloud.com/documents/link/LF7206C60A9212DA72124CA9F6C3FF17C1177E4725F3/file/D2BA28E8C506DC0CDA4F9C14F6C3FF17C1177E4725F3?allowInterrupt=1"
+                }
+            }
+        ]
+
+## Recipe [/recipes/{ID}]
+Single Recipe
+
++ Parameters
+
+    + ID: "2" (string) - the recipe ID
+
+### Retrieve Recipe [GET]
+Retrieve a single recipe
+
++ Response 200 (application/json; charset=utf-8)
+
+        {
+            "ID": "2",
+            "name": "Cloud Eggs",
+            "description": "Lift and Shift your day with these delicious cloud eggs",
+            "stars": 5,
+            "source": "www.foodnetwork.com",
+            "ingredients": [
+                    {"itemID": "4", "quantity": 1},
+                    {"itemID": "6", "quantity": 1},
+                    {"itemID": "7", "quantity": 1}
+            ],
+            "links": [
+                {
+                    "rel": "image",
+                    "href": "https://publicdocs-corp.documents.us2.oraclecloud.com/documents/link/LF7206C60A9212DA72124CA9F6C3FF17C1177E4725F3/file/D2680B911AEB03B8C3B6EF22F6C3FF17C1177E4725F3?RevLabel=LATEST&allowInterrupt=1"
+                },
+                {
+                    "rel": "video",
+                    "href": "https://publicdocs-corp.documents.us2.oraclecloud.com/documents/link/LF7206C60A9212DA72124CA9F6C3FF17C1177E4725F3/file/D2680B911AEB03B8C3B6EF22F6C3FF17C1177E4725F3?RevLabel=LATEST&allowInterrupt=1"
+                }
+            ]
+        }
+
+## Recipes Collection [/recipes]
+Available recipes
+
+### List All Recipes [GET]
+Lists all available recipes
+
++ Response 200 (application/json; charset=utf-8)
+
+        [
+            {
+                "ID": "1",
+                "name": "Plain Omelette",
+                "description": "A plain omelette, guaranteed to satisfy picky eaters",
+                "stars": 3,
+                "source": "www.pickyeater.com",
+                "ingredients": [
+                    {"itemID": "2", "quantity": 1},
+                    {"itemID": "3", "quantity": 1},
+                    {"itemID": "7", "quantity": 1}
+                ],
+                "links": [
+                    {
+                        "rel": "image",
+                        "href": "https://publicdocs-corp.documents.us2.oraclecloud.com/documents/link/LF7206C60A9212DA72124CA9F6C3FF17C1177E4725F3/file/D2680B911AEB03B8C3B6EF22F6C3FF17C1177E4725F3?RevLabel=LATEST&allowInterrupt=1"
+                    },
+                    {
+                        "rel": "video",
+                        "href": "https://publicdocs-corp.documents.us2.oraclecloud.com/documents/link/LF7206C60A9212DA72124CA9F6C3FF17C1177E4725F3/file/D2680B911AEB03B8C3B6EF22F6C3FF17C1177E4725F3?RevLabel=LATEST&allowInterrupt=1"
+                    }
+                ]
+            },
+            {
+                "ID": "2",
+                "name": "Cloud Eggs",
+                "description": "Lift and Shift your day with these delicious cloud eggs",
+                "stars": 5,
+                "source": "www.foodnetwork.com",
+                "ingredients": [
+                    {"itemID": "4", "quantity": 1},
+                    {"itemID": "6", "quantity": 1},
+                    {"itemID": "7", "quantity": 1}
+                ],
+                "links": [
+                    {
+                        "rel": "image",
+                        "href": "https://publicdocs-corp.documents.us2.oraclecloud.com/documents/link/LF7206C60A9212DA72124CA9F6C3FF17C1177E4725F3/file/D2680B911AEB03B8C3B6EF22F6C3FF17C1177E4725F3?RevLabel=LATEST&allowInterrupt=1"
+                    },
+                    {
+                        "rel": "video",
+                        "href": "https://publicdocs-corp.documents.us2.oraclecloud.com/documents/link/LF7206C60A9212DA72124CA9F6C3FF17C1177E4725F3/file/D2680B911AEB03B8C3B6EF22F6C3FF17C1177E4725F3?RevLabel=LATEST&allowInterrupt=1"
+                    }
+                ]
+            }
+            
+        ]
+        
+## Order [/orders/{ID}]
+Single Order
+
++ Parameters
+
+    + ID: "1234" (string) - the order ID
+
+### Retrieve Order [GET]
+Retrieve a single order
+
++ Response 200 (application/json; charset=utf-8)
+
+        {
+            "ID": "1234",
+            "recipientID": "1000",
+            "placed": "2017-09-07T20:41:45Z",
+            "estimatedTimeArrival": "2017-09-07T23:30:00Z",
+            "actualTimeArrival": "",
+            "status": "dispatched",
+            "detail": [
+                {"itemID": "2", "quantity": 3},
+                {"itemID": "4", "quantity": 1},
+                {"itemID": "6", "quantity": 1},
+                {"itemID": "7", "quantity": 1}               
+            ]
+        }
+ 
+## Orders Collection [/orders]
+Orders
+
+### Place a new Order [POST]
+Place an Order to be delivered
+
++ Request  (application/json; charset=utf-8)
+
+        {
+            "recipientID": "1000",
+            "detail": [
+                {"itemID": "2", "quantity": 3},
+                {"itemID": "4", "quantity": 1},
+                {"itemID": "6", "quantity": 1},
+                {"itemID": "7", "quantity": 1}               
+            ]
+        }
+
+
++ Response 201 (application/json; charset=utf-8)
+
+        {
+            "ID": "1234",
+            "recipientID": "1000",
+            "placed": "2017-09-07T20:41:45Z",
+            "estimatedTimeArrival": "2017-09-07T23:30:00Z",
+            "actualTimeArrival": "",
+            "status": "placed",
+            "detail": [
+                {"itemID": "2", "quantity": 3},
+                {"itemID": "4", "quantity": 1},
+                {"itemID": "6", "quantity": 1},
+                {"itemID": "7", "quantity": 1}               
+            ]
+        }
+
+### List All Orders [GET]
+Lists all orders
+
++ Response 200 (application/json; charset=utf-8)
+
+        [
+            {
+                "ID": "1233",
+                "recipientID": "1000",
+                "placed": "2017-09-06T21:31:04Z",
+                "estimatedTimeArrival": "2017-09-06T23:30:00Z",
+                "actualTimeArrival": "2017-09-06T23:32:36Z",
+                "status": "delivered",
+                "detail": [
+                    {"itemID": "2", "quantity": 1},
+                    {"itemID": "3", "quantity": 1},
+                    {"itemID": "7", "quantity": 1}                
+                ]
+            },
+            {
+                "ID": "1234",
+                "recipientID": "1000",
+                "placed": "2017-09-07T20:41:45Z",
+                "estimatedTimeArrival": "2017-09-07T23:30:00Z",
+                "actualTimeArrival": "",
+                "status": "dispatched",
+                "detail": [
+                    {"itemID": "2", "quantity": 3},
+                    {"itemID": "4", "quantity": 1},
+                    {"itemID": "6", "quantity": 1},
+                    {"itemID": "7", "quantity": 1}               
+                ]
+            }
+        ]
+        
+## Recalls Collection [/recalls]
+All recalls
+
+### List all recalls [GET]
+
++ Response 200 (application/json; charset=utf-8)
+
+        [
+            {
+                "ID": "1",
+                "itemID": "4",
+                "start": "2017-09-07T20:00:00Z",
+                "end": "2017-09-08T20:00:00Z"
+            }
+        ]
