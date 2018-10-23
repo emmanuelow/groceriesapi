@@ -6,6 +6,8 @@ The Groceries API can be used to order groceries from the Healthy Basket store.
 Items are things that can be purchased on the store via an Order. A Recipe can also contain Items needed to put that Recipe together.
 There is also a list of Recalls that may contain Items and the associated period of each recall.
 
+# Group Ordering APIs
+
 ## Item [/items/{ID}]
 An item includes name, brand, amount, a description, price and the default quantity to be ordered.
 There is also a link to an image.
@@ -262,7 +264,7 @@ Orders
 Place an order to be delivered. The request body must have a recipient ID and the order detail, an array of items IDs and quntities.
 A succesful order will return a 201 status and the full order body.
 
-+ Request  (application/json; charset=utf-8)
++ Request (application/json; charset=utf-8)
 
         {
             "recipientID": "1000",
@@ -326,6 +328,8 @@ Lists all orders
                 ]
             }
         ]
+
+# Group Recall APIs
         
 ## Recalls Collection [/recalls]
 All recalls
